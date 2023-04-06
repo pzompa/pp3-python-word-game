@@ -268,11 +268,34 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
     failed_input = input('prompt: ')
     return failed_input
 
-def goodbye_screen():
+def goodbye_screen(player_name):
     """
     Game end splash screen
     """
     # draw goodbye screen
+    os.system('clear')
+    print('╒══════════════════════════════════════════════════════════════════════════════╕')
+    print(f'  Name: {player_name}')
+    print('╘══════════════════════════════════════════════════════════════════════════════╛')
+    print('')
+    print('')
+    print('')
+    print('')
+    print('')
+    print('                   _____                 _ _  ')
+    print('                  / ____|               | | | ')
+    print('                 | |  __  ___   ___   __| | |__  _   _  ___ ')
+    print("                 | | |_ |/ _ \ / _ \ / _` | '_ \| | | |/ _ \ ")
+    print('                 | |__| | (_) | (_) | (_| | |_) | |_| |  __/ ')
+    print('                  \_____|\___/ \___/ \__,_|_.__/ \__, |\___| ')
+    print('                                                  __/ | ')
+    print('                                                 |___/ ')
+    print('')
+    print('')
+    print('')
+    print('╞══════════════════════════════════════════════════════════════════════════════╡')
+    print('                      ⇉ press anykey to EXIT game ⇇  ')
+    input('prompt: ')
 
 def main():
     """
