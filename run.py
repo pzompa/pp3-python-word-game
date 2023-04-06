@@ -1,6 +1,5 @@
-"""
-Project 3: Python Project - Word Game 
-"""
+# Project 3: Python Project - Word Game 
+import os
 
 def random_word_function():
     """
@@ -17,6 +16,29 @@ def welcome_screen():
     # Initial Game Screen
     # draw initial screen
     # anykey to continue
+    os.system('clear')
+    print('╒══════════════════════════════════════════════════════════════════════════════╕')
+    print('                               _______  _______  ______  ')
+    print("                     |\     /|(  ___  )(  ____ )(  __  \ ")
+    print('                     | )   ( || (   ) || (    )|| (  \  )')
+    print('                     | | _ | || |   | || (____)|| |   ) |')
+    print('                     | |( )| || |   | ||     __)| |   | |')
+    print('                     | || || || |   | || (\ (   | |   ) |')
+    print('                     | () () || (___) || ) \ \__| (__/  )')
+    print('                     (_______)(_______)|/   \__/(______/ ')
+    print('                                                         ')
+    print('                      _______  _______  _______  _______ ')
+    print('                     (  ____ \(  ___  )(       )(  ____ \ ')
+    print('                     | (    \/| (   ) || () () || (    \/')
+    print('                     | |      | (___) || || || || (__    ')
+    print('                     | | ____ |  ___  || |(_)| ||  __)   ')
+    print('                     | | \_  )| (   ) || |   | || (      ')
+    print('                     | (___) || )   ( || )   ( || (____/\ ')
+    print('                     (_______)|/     \||/     \|(_______/')
+    print('                                                                                ')
+    print('╞══════════════════════════════════════════════════════════════════════════════╡')
+    print('                         ⇉ Press ENTER to continue ⇇  ')
+    enter = input('prompt: ')
 
 
 def player_name_screen():
@@ -71,3 +93,8 @@ def main():
     # call congrats screen
     # call failed screen
     # call goodbye screen
+
+    # initial screen - game start
+    welcome_screen()
+
+main()
