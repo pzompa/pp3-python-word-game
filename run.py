@@ -206,11 +206,36 @@ def game_screen(player_name):
         return ['failed',attempt_counter, maximum_attempts, random_word]
         
 
-def congrats_screen():
+def congrats_screen(player_name, attempt_counter, maximum_attempts):
     """
-    Display Contratulation Screen
+    Display Congratulation Screen
     """
-    # draw Contratulation Screen
+    # draw Congratulation Screen
+    os.system('clear')
+    print('╒══════════════════════════════════════════════════════════════════════════════╕')
+    print(f'  Name: {player_name}')
+    print('╘══════════════════════════════════════════════════════════════════════════════╛')
+    print('')
+    print('  Maximum attempts: 10')
+    print(f'     Your attempts: {attempt_counter}')
+    print('')
+    print('')
+    print('')
+    print(f'                          {player_name}, CONGRATULATIONS.')
+    print('                             You are a genius!')
+    print('')
+    print('')
+    print('                           Choose an Option:')
+    print('                             1 Play again')
+    print('                             2 Exit Game')
+    print('')
+    print('')
+    print('')
+    print('╞══════════════════════════════════════════════════════════════════════════════╡')
+    print('                          ⇉ Type an option NUMBER ⇇  ')
+    congrats_input = input('prompt: ')
+    return congrats_input
+
 
 def failed_screen():
     """
@@ -256,6 +281,15 @@ def main():
         if option == '1':
             # call game screen
             game_input, attempt_counter, maximum_attempts, random_word = game_screen(player_name)
+            # if user wins
+            if game_input == 'congratulations':
+                congrats_input = congrats_screen(player_name, attempt_counter, maximum_attempts)
+                if congrats_input == '1':
+                    do_not_exit = True
+                    option = '1'
+                elif congrats_input == '2':
+                    do_not_exit = False
+                    option = '2'
         if option == '2':
             break
     if option == '2':
