@@ -201,6 +201,9 @@ def game_screen(player_name):
         else:
             msg = 'Oops, that was not in the word, please try again'
             attempt_counter += 1
+    # attempt maximum reached
+    if attempt_counter == maximum_attempts:
+        return ['failed',attempt_counter, maximum_attempts, random_word]
         
 
 def congrats_screen():
