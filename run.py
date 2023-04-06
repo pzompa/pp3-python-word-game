@@ -250,4 +250,16 @@ def main():
     # display game screen
     game_screen(player_name)
 
+    do_not_exit = True
+    while do_not_exit:
+        # option screen - user selection "1"
+        if option == '1':
+            # call game screen
+            game_input, attempt_counter, maximum_attempts, random_word = game_screen(player_name)
+        if option == '2':
+            break
+    if option == '2':
+        goodbye_screen(player_name)
+    return '\nThank you for playing this game\n\n'
+
 main()
