@@ -76,11 +76,52 @@ def player_name_screen():
     player_name = input('prompt: ').upper()
     return player_name
 
-def options_screen():
+def options_screen(player_name):
     """
     Options Menu
     """
     # Play or Exit
+
+    # inital message
+    msg = 'Type an option NUMBER'
+    
+    # user input loop
+    wrong_option = True
+    while wrong_option:
+        os.system('clear')
+        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print(f'                           Hi {player_name},')
+        print('')
+        print('                           Choose an Option:')
+        print('                             1 Play Game')
+        print('                             2 Exit Game')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print(f'                           ⇉ {msg} ⇇  ')
+        option_input = input('prompt: ')
+        
+        # if user choice valid - break loop
+        if option_input in ('1', '2'):
+            wrong_option = False
+        
+        # if user choice invalid - different message - loop
+        else:
+            msg = 'Choose only 1 or 2'
+    
+    # return valid user input
+    return option_input
 
 def game_screen():
     """
@@ -127,5 +168,8 @@ def main():
 
     # get player's name
     player_name = player_name_screen()
+
+    # display game menu
+    option = options_screen(player_name)
 
 main()
