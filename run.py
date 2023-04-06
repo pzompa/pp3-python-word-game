@@ -3,13 +3,22 @@
 # for os.system clear: clears screen
 import os
 
+# for choosing random word from list
+import random
+
 def random_word_function():
     """
     Generate a random Word
     """
-    # Generate randomd Word
     # create a list of random words
     # choose a word form the list
+    words = ["grape", "orange", "strawberry", "watermelon", "lime", "date", "banana", "apple", "avocado"]
+    word = random.choice(words)
+
+    # future implementation: use request library, to get random word from open API
+
+    # return random word
+    return word
 
 def welcome_screen():
     """
@@ -123,13 +132,16 @@ def options_screen(player_name):
     # return valid user input
     return option_input
 
-def game_screen():
+def game_screen(player_name):
     """
     Main Game Code
     """
     # Main Game Code
     # accept user input
     # check input validity
+
+    # get random word
+    random_word = random_word_function()
 
 def congrats_screen():
     """
@@ -171,5 +183,8 @@ def main():
 
     # display game menu
     option = options_screen(player_name)
+
+    # display game screen
+    game_screen(player_name)
 
 main()
