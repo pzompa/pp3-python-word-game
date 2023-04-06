@@ -1,4 +1,6 @@
 # Project 3: Python Project - Word Game 
+
+# for os.system clear: clears screen
 import os
 
 def random_word_function():
@@ -45,8 +47,34 @@ def player_name_screen():
     """
     Get Player Name, to personalize the Game
     """
-    # Ask for Player's Name
-    # request player's name
+    # clear screen
+    # draw screen
+    # wait for user input (player's name)
+    # return value = player's name
+    os.system('clear')
+    print('╒══════════════════════════════════════════════════════════════════════════════╕')
+    print('                               _______  _______  ______  ')
+    print('                     |\     /|(  ___  )(  ____ )(  __  \ ')
+    print('                     | )   ( || (   ) || (    )|| (  \  )')
+    print('                     | | _ | || |   | || (____)|| |   ) |')
+    print('                     | |( )| || |   | ||     __)| |   | |')
+    print('                     | || || || |   | || (\ (   | |   ) |')
+    print('                     | () () || (___) || ) \ \__| (__/  )')
+    print('                     (_______)(_______)|/   \__/(______/ ')
+    print('                                                         ')
+    print('                      _______  _______  _______  _______ ')
+    print('                     (  ____ \(  ___  )(       )(  ____ \ ')
+    print('                     | (    \/| (   ) || () () || (    \/')
+    print('                     | |      | (___) || || || || (__    ')
+    print('                     | | ____ |  ___  || |(_)| ||  __)   ')
+    print('                     | | \_  )| (   ) || |   | || (      ')
+    print('                     | (___) || )   ( || )   ( || (____/\ ')
+    print('                     (_______)|/     \||/     \|(_______/')
+    print('                                                                                ')
+    print('╞══════════════════════════════════════════════════════════════════════════════╡')
+    print('                             ⇉ Type your NAME ⇇  ')
+    player_name = input('prompt: ').upper()
+    return player_name
 
 def options_screen():
     """
@@ -96,5 +124,8 @@ def main():
 
     # initial screen - game start
     welcome_screen()
+
+    # get player's name
+    player_name = player_name_screen()
 
 main()
