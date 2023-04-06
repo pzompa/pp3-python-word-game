@@ -205,29 +205,44 @@ def congrats_screen(player_name, attempt_counter, maximum_attempts):
     gives the user options to exit or play the game again
     """
     # draw Congratulation Screen
-    os.system('clear')
-    print('╒══════════════════════════════════════════════════════════════════════════════╕')
-    print(f'  Name: {player_name}')
-    print('╘══════════════════════════════════════════════════════════════════════════════╛')
-    print('')
-    print('  Maximum attempts: 10')
-    print(f'     Your attempts: {attempt_counter}')
-    print('')
-    print('')
-    print('')
-    print(f'                          {player_name}, CONGRATULATIONS.')
-    print('                             You are a genius!')
-    print('')
-    print('')
-    print('                           Choose an Option:')
-    print('                             1 Play again')
-    print('                             2 Exit Game')
-    print('')
-    print('')
-    print('')
-    print('╞══════════════════════════════════════════════════════════════════════════════╡')
-    print('                          ⇉ Type an option NUMBER ⇇  ')
-    congrats_input = input('prompt: ')
+    # user input loop
+
+    # inital message
+    msg = 'Type an option NUMBER'
+
+    wrong_option = True
+    while wrong_option:
+        os.system('clear')
+        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print(f'  Name: {player_name}')
+        print('╘══════════════════════════════════════════════════════════════════════════════╛')
+        print('')
+        print('  Maximum attempts: 10')
+        print(f'     Your attempts: {attempt_counter}')
+        print('')
+        print('')
+        print('')
+        print(f'                          {player_name}, CONGRATULATIONS.')
+        print('                             You are a genius!')
+        print('')
+        print('')
+        print('                           Choose an Option:')
+        print('                             1 Play again')
+        print('                             2 Exit Game')
+        print('')
+        print('')
+        print('')
+        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print(f'                          ⇉ {msg} ⇇  ')
+        congrats_input = input('prompt: ')
+
+        # if user choice valid - break loop
+        if congrats_input in ('1', '2'):
+            wrong_option = False
+        
+        # if user choice invalid - different message - loop
+        else:
+            msg = 'Choose only 1 or 2'
     return congrats_input
 
 
@@ -236,29 +251,44 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
     Print Failed Screen
     gives the user options to exit game or to play again
     """
-    os.system('clear')
-    print('╒══════════════════════════════════════════════════════════════════════════════╕')
-    print(f'  Name: {player_name}')
-    print('╘══════════════════════════════════════════════════════════════════════════════╛')
-    print('')
-    print(f'  Maximum attempts: {maximum_attempts}')
-    print(f'     Your attempts: {attempt_counter}')
-    print('')
-    print('')
-    print('')
-    print(f'                    {player_name}, you tried but you FAILED this time.')
-    print('')
-    print(f'                    The word was "{random_word.upper()}"')
-    print('')
-    print('                           Choose an Option:')
-    print('                             1 Play again')
-    print('                             2 Exit Game')
-    print('')
-    print('')
-    print('')
-    print('╞══════════════════════════════════════════════════════════════════════════════╡')
-    print('                          ⇉ Type an option NUMBER ⇇  ')
-    failed_input = input('prompt: ')
+    # inital message
+    msg = 'Type an option NUMBER'
+    
+    # user input loop
+    wrong_option = True
+    while wrong_option:
+        os.system('clear')
+        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print(f'  Name: {player_name}')
+        print('╘══════════════════════════════════════════════════════════════════════════════╛')
+        print('')
+        print(f'  Maximum attempts: {maximum_attempts}')
+        print(f'     Your attempts: {attempt_counter}')
+        print('')
+        print('')
+        print('')
+        print(f'                    {player_name}, you tried but you FAILED this time.')
+        print('')
+        print(f'                    The word was "{random_word.upper()}"')
+        print('')
+        print('                           Choose an Option:')
+        print('                             1 Play again')
+        print('                             2 Exit Game')
+        print('')
+        print('')
+        print('')
+        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print(f'                          ⇉ {msg} ⇇  ')
+        failed_input = input('prompt: ')
+                
+        # if user choice valid - break loop
+        if failed_input in ('1', '2'):
+            wrong_option = False
+        
+        # if user choice invalid - different message - loop
+        else:
+            msg = 'Choose only 1 or 2'
+    
     return failed_input
 
 def goodbye_screen(player_name):
