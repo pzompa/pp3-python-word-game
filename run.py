@@ -143,6 +143,51 @@ def game_screen(player_name):
     # get random word
     random_word = random_word_function()
 
+    # setup variables for game logic
+    maximum_attempts = 10
+    attempt_counter = 0
+    user_input = ''
+    display = ''
+    guessed = []
+
+    # inital message
+    msg = 'Type only LETTERS a-z'
+
+    # for hint
+    word_length = len(random_word)
+
+    while attempt_counter < maximum_attempts:
+        display = ''
+        for letter in random_word:
+            if letter in guessed:
+                display += ' ' +  letter + ' '
+            else: 
+                display += ' _ '   
+        os.system('clear')
+        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print(f'  Name: {player_name}')
+        print('╘══════════════════════════════════════════════════════════════════════════════╛')
+        print('')
+        print(f'  Maximum attempts: {maximum_attempts}')
+        print(f'     Your attempts:  {attempt_counter}')
+        print('')
+        print(f'    Its a Fruit and has {word_length} letters')
+        print('')
+        print('')
+        print('')
+        print('')
+        print(f'                                  {display}')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('')
+        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print(f'                  ⇉ {msg} ⇇  ')
+        user_input = input('prompt: ').lower()
+        
+
 def congrats_screen():
     """
     Display Contratulation Screen
