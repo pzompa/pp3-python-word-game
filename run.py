@@ -1,32 +1,23 @@
 # Project 3: Python Project - Word Game 
 
-# for os.system clear: clears screen
 import os
-
-# for choosing random word from list
 import random
 
 def random_word_function():
     """
-    Generate a random Word
+    Chooses a random word from the list
+
     """
-    # create a list of random words
-    # choose a word form the list
     words = ["grape", "orange", "strawberry", "watermelon", "lime", "date", "banana", "apple", "avocado"]
     word = random.choice(words)
 
-    # future implementation: use request library, to get random word from open API
-
-    # return random word
     return word
 
 def welcome_screen():
     """
-    Initial Game Screen
+    Prints Initial Game Screen
+    Gives option to continue the game
     """
-    # Initial Game Screen
-    # draw initial screen
-    # anykey to continue
     os.system('clear')
     print('╒══════════════════════════════════════════════════════════════════════════════╕')
     print('                               _______  _______  ______  ')
@@ -49,17 +40,15 @@ def welcome_screen():
     print('                                                                                ')
     print('╞══════════════════════════════════════════════════════════════════════════════╡')
     print('                         ⇉ Press ENTER to continue ⇇  ')
-    enter = input('prompt: ')
+    input('prompt: ')
 
 
 def player_name_screen():
     """
-    Get Player Name, to personalize the Game
+    Get Player name to personalize the Game
+    Prints screen
+    accepts user input and returns player's name
     """
-    # clear screen
-    # draw screen
-    # wait for user input (player's name)
-    # return value = player's name
     os.system('clear')
     print('╒══════════════════════════════════════════════════════════════════════════════╕')
     print('                               _______  _______  ______  ')
@@ -87,10 +76,12 @@ def player_name_screen():
 
 def options_screen(player_name):
     """
-    Options Menu
-    """
-    # Play or Exit
+    Prints the option screen
+    Gives the user options to play the game or exit
+    Runs a loop to validate the user option input
 
+    """
+   
     # inital message
     msg = 'Type an option NUMBER'
     
@@ -135,12 +126,14 @@ def options_screen(player_name):
 def game_screen(player_name):
     """
     Main Game Code
+    accepts and validates user input
+    gets random word 
+    runs a while loop to determine if annd when the game is finished
+    runs a for loop to hide/show the letters
+    prints the game screen 
+    gives option to user to quit or play the game again.
     """
-    # Main Game Code
-    # accept user input
-    # check input validity
-
-    # get random word
+  
     random_word = random_word_function()
 
     # setup variables for game logic
@@ -208,7 +201,8 @@ def game_screen(player_name):
 
 def congrats_screen(player_name, attempt_counter, maximum_attempts):
     """
-    Display Congratulation Screen
+    Prints Congratulation Screen
+    gives the user options to exit or play the game again
     """
     # draw Congratulation Screen
     os.system('clear')
@@ -239,10 +233,9 @@ def congrats_screen(player_name, attempt_counter, maximum_attempts):
 
 def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
     """
-    Display Failed Screen
+    Print Failed Screen
+    gives the user options to exit game or to play again
     """
-    # Player loses
-    # draw failed screen
     os.system('clear')
     print('╒══════════════════════════════════════════════════════════════════════════════╕')
     print(f'  Name: {player_name}')
@@ -270,9 +263,10 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
 
 def goodbye_screen(player_name):
     """
-    Game end splash screen
+    Print Game end splash screen
+    allows user to enter any key to exit the game
+
     """
-    # draw goodbye screen
     os.system('clear')
     print('╒══════════════════════════════════════════════════════════════════════════════╕')
     print(f'  Name: {player_name}')
@@ -299,17 +293,8 @@ def goodbye_screen(player_name):
 
 def main():
     """
-    Start Game
+    Runs all program function to Start Game
     """
-    # program main control flow
-    # call welcome screen
-    # call player name screen
-    # call option screen
-    # call game screen
-    # call congrats screen
-    # call failed screen
-    # call goodbye screen
-
     # initial screen - game start
     welcome_screen()
 
@@ -317,7 +302,7 @@ def main():
     player_name = player_name_screen()
 
     display = ''
-    
+
     # display game menu
     option = options_screen(player_name)
 
