@@ -237,12 +237,36 @@ def congrats_screen(player_name, attempt_counter, maximum_attempts):
     return congrats_input
 
 
-def failed_screen():
+def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
     """
     Display Failed Screen
     """
     # Player loses
     # draw failed screen
+    os.system('clear')
+    print('╒══════════════════════════════════════════════════════════════════════════════╕')
+    print(f'  Name: {player_name}')
+    print('╘══════════════════════════════════════════════════════════════════════════════╛')
+    print('')
+    print(f'  Maximum attempts: {maximum_attempts}')
+    print(f'     Your attempts: {attempt_counter}')
+    print('')
+    print('')
+    print('')
+    print(f'                    {player_name}, you tried but you FAILED this time.')
+    print('')
+    print(f'                    The word was "{random_word.upper()}"')
+    print('')
+    print('                           Choose an Option:')
+    print('                             1 Play again')
+    print('                             2 Exit Game')
+    print('')
+    print('')
+    print('')
+    print('╞══════════════════════════════════════════════════════════════════════════════╡')
+    print('                          ⇉ Type an option NUMBER ⇇  ')
+    failed_input = input('prompt: ')
+    return failed_input
 
 def goodbye_screen():
     """
@@ -284,6 +308,14 @@ def main():
             # if user wins
             if game_input == 'congratulations':
                 congrats_input = congrats_screen(player_name, attempt_counter, maximum_attempts)
+                if congrats_input == '1':
+                    do_not_exit = True
+                    option = '1'
+                elif congrats_input == '2':
+                    do_not_exit = False
+                    option = '2'
+            if game_input == 'failed':
+                congrats_input = failed_screen(player_name, attempt_counter, maximum_attempts, random_word)
                 if congrats_input == '1':
                     do_not_exit = True
                     option = '1'
