@@ -186,6 +186,21 @@ def game_screen(player_name):
         print('╞══════════════════════════════════════════════════════════════════════════════╡')
         print(f'                  ⇉ {msg} ⇇  ')
         user_input = input('prompt: ').lower()
+
+        # if user input is in random word
+        if user_input in random_word:
+            # append to guessed list
+            guessed.append(user_input)
+            # if user guessed all letters
+            if set(random_word) == set(guessed):
+                return ['congratulations',attempt_counter, maximum_attempts, random_word]
+            # if word is not complete
+            else:
+                msg = 'Correct Guess, Please enter next letter!'
+        # if wrong user input
+        else:
+            msg = 'Oops, that was not in the word, please try again'
+            attempt_counter += 1
         
 
 def congrats_screen():
