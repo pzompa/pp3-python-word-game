@@ -316,12 +316,12 @@ def main():
     # get player's name
     player_name = player_name_screen()
 
+    display = ''
+    
     # display game menu
     option = options_screen(player_name)
 
-    # display game screen
-    game_screen(player_name)
-
+    # while loop for user input
     do_not_exit = True
     while do_not_exit:
         # option screen - user selection "1"
@@ -351,4 +351,4 @@ def main():
         goodbye_screen(player_name)
     return '\nThank you for playing this game\n\n'
 
-main()
+print(main())
