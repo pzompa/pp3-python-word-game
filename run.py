@@ -18,29 +18,41 @@ def welcome_screen():
     Prints Initial Game Screen
     Gives option to continue the game
     """
-    os.system('clear')
-    print('╒══════════════════════════════════════════════════════════════════════════════╕')
-    print('                               _______  _______  ______  ')
-    print("                     |\     /|(  ___  )(  ____ )(  __  \ ")
-    print('                     | )   ( || (   ) || (    )|| (  \  )')
-    print('                     | | _ | || |   | || (____)|| |   ) |')
-    print('                     | |( )| || |   | ||     __)| |   | |')
-    print('                     | || || || |   | || (\ (   | |   ) |')
-    print('                     | () () || (___) || ) \ \__| (__/  )')
-    print('                     (_______)(_______)|/   \__/(______/ ')
-    print('                                                         ')
-    print('                      _______  _______  _______  _______ ')
-    print('                     (  ____ \(  ___  )(       )(  ____ \ ')
-    print('                     | (    \/| (   ) || () () || (    \/')
-    print('                     | |      | (___) || || || || (__    ')
-    print('                     | | ____ |  ___  || |(_)| ||  __)   ')
-    print('                     | | \_  )| (   ) || |   | || (      ')
-    print('                     | (___) || )   ( || )   ( || (____/\ ')
-    print('                     (_______)|/     \||/     \|(_______/')
-    print('                                                                                ')
-    print('╞══════════════════════════════════════════════════════════════════════════════╡')
-    print('                         ⇉ Press ENTER to continue ⇇  ')
-    input('prompt: ')
+    msg = 'Press ENTER to continue'
+
+    wrong_option = True
+    while wrong_option:
+        os.system('clear')
+        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('                               _______  _______  ______  ')
+        print("                     |\     /|(  ___  )(  ____ )(  __  \ ")
+        print('                     | )   ( || (   ) || (    )|| (  \  )')
+        print('                     | | _ | || |   | || (____)|| |   ) |')
+        print('                     | |( )| || |   | ||     __)| |   | |')
+        print('                     | || || || |   | || (\ (   | |   ) |')
+        print('                     | () () || (___) || ) \ \__| (__/  )')
+        print('                     (_______)(_______)|/   \__/(______/ ')
+        print('                                                         ')
+        print('                      _______  _______  _______  _______ ')
+        print('                     (  ____ \(  ___  )(       )(  ____ \ ')
+        print('                     | (    \/| (   ) || () () || (    \/')
+        print('                     | |      | (___) || || || || (__    ')
+        print('                     | | ____ |  ___  || |(_)| ||  __)   ')
+        print('                     | | \_  )| (   ) || |   | || (      ')
+        print('                     | (___) || )   ( || )   ( || (____/\ ')
+        print('                     (_______)|/     \||/     \|(_______/')
+        print('                                                                                ')
+        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print('                         ⇉ Press ENTER to continue ⇇  ')
+        welcome_input = input('prompt: ')
+
+        # if user choice valid - break loop
+        if welcome_input == '':
+            wrong_option = False
+        
+        # if user choice invalid - different message - loop
+        else:
+            msg = 'Press ENTER'
 
 
 def player_name_screen():
