@@ -9,7 +9,7 @@ def random_word_function():
     Chooses a random word from the list
 
     """
-    words = ["grape", "orange", "strawberry", "watermelon", "lime", "date", "banana", "apple", "avocado"]
+    words = ["grape", "orange", "mango", "watermelon", "lime", "date", "banana", "apple", "avocado"]
     word = random.choice(words)
 
     return word
