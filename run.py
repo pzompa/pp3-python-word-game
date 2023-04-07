@@ -345,9 +345,8 @@ def goodbye_screen(player_name):
     print('')
     print('')
     print('╞══════════════════════════════════════════════════════════════════════════════╡')
-    print('                      ⇉ press anykey to EXIT game ⇇  ')
-    #input('prompt: ')
-    time.sleep(2)
+    print('                      ⇉ Thank you for playing this game. ⇇  ')
+    time.sleep(3)
     os.system('clear')
 
 def main():
