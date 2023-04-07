@@ -43,7 +43,7 @@ def welcome_screen():
         print('                     (_______)|/     \||/     \|(_______/')
         print('                                                                                ')
         print('╞══════════════════════════════════════════════════════════════════════════════╡')
-        print('                         ⇉ Press ENTER to continue ⇇  ')
+        print(f'                         ⇉ {msg} ⇇  ')
         welcome_input = input('prompt: ')
 
         # if user choice valid - break loop
@@ -61,30 +61,43 @@ def player_name_screen():
     Prints screen
     accepts user input and returns player's name
     """
-    os.system('clear')
-    print('╒══════════════════════════════════════════════════════════════════════════════╕')
-    print('                               _______  _______  ______  ')
-    print('                     |\     /|(  ___  )(  ____ )(  __  \ ')
-    print('                     | )   ( || (   ) || (    )|| (  \  )')
-    print('                     | | _ | || |   | || (____)|| |   ) |')
-    print('                     | |( )| || |   | ||     __)| |   | |')
-    print('                     | || || || |   | || (\ (   | |   ) |')
-    print('                     | () () || (___) || ) \ \__| (__/  )')
-    print('                     (_______)(_______)|/   \__/(______/ ')
-    print('                                                         ')
-    print('                      _______  _______  _______  _______ ')
-    print('                     (  ____ \(  ___  )(       )(  ____ \ ')
-    print('                     | (    \/| (   ) || () () || (    \/')
-    print('                     | |      | (___) || || || || (__    ')
-    print('                     | | ____ |  ___  || |(_)| ||  __)   ')
-    print('                     | | \_  )| (   ) || |   | || (      ')
-    print('                     | (___) || )   ( || )   ( || (____/\ ')
-    print('                     (_______)|/     \||/     \|(_______/')
-    print('                                                                                ')
-    print('╞══════════════════════════════════════════════════════════════════════════════╡')
-    print('                             ⇉ Type your NAME ⇇  ')
-    player_name = input('prompt: ').upper()
-    return player_name
+    msg = 'Type your NAME'
+
+    wrong_option = True
+    while wrong_option:
+        os.system('clear')
+        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('                               _______  _______  ______  ')
+        print('                     |\     /|(  ___  )(  ____ )(  __  \ ')
+        print('                     | )   ( || (   ) || (    )|| (  \  )')
+        print('                     | | _ | || |   | || (____)|| |   ) |')
+        print('                     | |( )| || |   | ||     __)| |   | |')
+        print('                     | || || || |   | || (\ (   | |   ) |')
+        print('                     | () () || (___) || ) \ \__| (__/  )')
+        print('                     (_______)(_______)|/   \__/(______/ ')
+        print('                                                         ')
+        print('                      _______  _______  _______  _______ ')
+        print('                     (  ____ \(  ___  )(       )(  ____ \ ')
+        print('                     | (    \/| (   ) || () () || (    \/')
+        print('                     | |      | (___) || || || || (__    ')
+        print('                     | | ____ |  ___  || |(_)| ||  __)   ')
+        print('                     | | \_  )| (   ) || |   | || (      ')
+        print('                     | (___) || )   ( || )   ( || (____/\ ')
+        print('                     (_______)|/     \||/     \|(_______/')
+        print('                                                                                ')
+        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print(f'                             ⇉ {msg} ⇇  ')
+        player_name_input = input('prompt: ').upper()
+
+        # if user choice valid - break loop
+        if player_name_input.isalpha():
+            wrong_option = False
+        
+        # if user choice invalid - different message - loop
+        else:
+            msg = 'Type only your NAME'
+
+    return player_name_input
 
 def options_screen(player_name):
     """
