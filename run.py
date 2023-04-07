@@ -1,18 +1,28 @@
-# Project 3: Python Project - Word Game 
+# Project 3: Python Project - Word Game
 
 import os
 import random
 import time
+
 
 def random_word_function():
     """
     Chooses a random word from the list
 
     """
-    words = ["grape", "orange", "mango", "watermelon", "lime", "date", "banana", "apple", "avocado"]
+    words = ["grape",
+             "orange",
+             "mango",
+             "watermelon",
+             "lime",
+             "date",
+             "banana",
+             "apple",
+             "avocado"]
     word = random.choice(words)
 
     return word
+
 
 def welcome_screen():
     """
@@ -50,7 +60,7 @@ def welcome_screen():
         # if user choice valid - break loop
         if welcome_input == '':
             wrong_option = False
-        
+
         # if user choice invalid - different message - loop
         else:
             msg = 'Press ENTER'
@@ -93,12 +103,13 @@ def player_name_screen():
         # if user choice valid - break loop
         if player_name_input.isalpha():
             wrong_option = False
-        
+
         # if user choice invalid - different message - loop
         else:
             msg = 'Type only your NAME'
 
     return player_name_input
+
 
 def options_screen(player_name):
     """
@@ -107,10 +118,10 @@ def options_screen(player_name):
     Runs a loop to validate the user option input
 
     """
-   
+
     # inital message
     msg = 'Type an option NUMBER'
-    
+
     # user input loop
     wrong_option = True
     while wrong_option:
@@ -137,29 +148,30 @@ def options_screen(player_name):
         print('╞══════════════════════════════════════════════════════════════════════════════╡')
         print(f'                           ⇉ {msg} ⇇  ')
         option_input = input('prompt: ')
-        
+
         # if user choice valid - break loop
         if option_input in ('1', '2'):
             wrong_option = False
-        
+
         # if user choice invalid - different message - loop
         else:
             msg = 'Choose only 1 or 2'
-    
+
     # return valid user input
     return option_input
+
 
 def game_screen(player_name):
     """
     Main Game Code
     accepts and validates user input
-    gets random word 
+    gets random word
     runs a while loop to determine if annd when the game is finished
     runs a for loop to hide/show the letters
-    prints the game screen 
+    prints the game screen
     gives option to user to quit or play the game again.
     """
-  
+
     random_word = random_word_function()
 
     # setup variables for game logic
@@ -179,9 +191,9 @@ def game_screen(player_name):
         display = ''
         for letter in random_word:
             if letter in guessed:
-                display += ' ' +  letter + ' '
-            else: 
-                display += ' _ '   
+                display += ' ' + letter + ' '
+            else:
+                display += ' _ '
 
         os.system('clear')
         print('╒══════════════════════════════════════════════════════════════════════════════╕')
@@ -213,7 +225,7 @@ def game_screen(player_name):
             guessed.append(user_input)
             # if user guessed all letters
             if set(random_word) == set(guessed):
-                return ['congratulations',attempt_counter, maximum_attempts, random_word]
+                return ['congratulations', attempt_counter, maximum_attempts, random_word]
             # if word is not complete
             else:
                 msg = 'Correct Guess, Please enter next letter!'
@@ -223,8 +235,8 @@ def game_screen(player_name):
             attempt_counter += 1
     # attempt maximum reached
     if attempt_counter == maximum_attempts:
-        return ['failed',attempt_counter, maximum_attempts, random_word]
-        
+        return ['failed', attempt_counter, maximum_attempts, random_word]
+
 
 def congrats_screen(player_name, attempt_counter, maximum_attempts):
     """
@@ -266,7 +278,7 @@ def congrats_screen(player_name, attempt_counter, maximum_attempts):
         # if user choice valid - break loop
         if congrats_input in ('1', '2'):
             wrong_option = False
-        
+
         # if user choice invalid - different message - loop
         else:
             msg = 'Choose only 1 or 2'
@@ -280,7 +292,7 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
     """
     # inital message
     msg = 'Type an option NUMBER'
-    
+
     # user input loop
     wrong_option = True
     while wrong_option:
@@ -307,22 +319,22 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
         print('╞══════════════════════════════════════════════════════════════════════════════╡')
         print(f'                          ⇉ {msg} ⇇  ')
         failed_input = input('prompt: ')
-                
+
         # if user choice valid - break loop
         if failed_input in ('1', '2'):
             wrong_option = False
-        
+
         # if user choice invalid - different message - loop
         else:
             msg = 'Choose only 1 or 2'
-    
+
     return failed_input
+
 
 def goodbye_screen(player_name):
     """
     Print Game end splash screen
     allows user to enter any key to exit the game
-
     """
     os.system('clear')
     print('╒══════════════════════════════════════════════════════════════════════════════╕')
@@ -348,6 +360,7 @@ def goodbye_screen(player_name):
     print('                      ⇉ Thank you for playing this game. ⇇  ')
     time.sleep(3)
     os.system('clear')
+
 
 def main():
     """
@@ -392,5 +405,6 @@ def main():
             break
     if option == '2':
         goodbye_screen(player_name)
+
 
 main()
