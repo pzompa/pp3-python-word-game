@@ -2,6 +2,7 @@
 
 import os
 import random
+import time
 
 def random_word_function():
     """
@@ -181,6 +182,7 @@ def game_screen(player_name):
                 display += ' ' +  letter + ' '
             else: 
                 display += ' _ '   
+
         os.system('clear')
         print('╒══════════════════════════════════════════════════════════════════════════════╕')
         print(f'  Name: {player_name}')
@@ -344,7 +346,9 @@ def goodbye_screen(player_name):
     print('')
     print('╞══════════════════════════════════════════════════════════════════════════════╡')
     print('                      ⇉ press anykey to EXIT game ⇇  ')
-    input('prompt: ')
+    #input('prompt: ')
+    time.sleep(2)
+    os.system('clear')
 
 def main():
     """
@@ -389,6 +393,5 @@ def main():
             break
     if option == '2':
         goodbye_screen(player_name)
-    return '\nThank you for playing this game\n\n'
 
-print(main())
+main()
