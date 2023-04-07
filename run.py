@@ -4,6 +4,9 @@ import os
 import random
 import time
 
+draw_line = '═'
+draw_space = ' '
+
 
 def random_word_function():
     """
@@ -34,7 +37,7 @@ def welcome_screen():
     wrong_option = True
     while wrong_option:
         os.system('clear')
-        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('╒' + draw_line * 78 + '╕')
         print('                               _______  _______  ______  ')
         print("                     |\\     /|(  ___  )(  ____ )(  __  \\ ")
         print('                     | )   ( || (   ) || (    )|| (  \\  )')
@@ -52,8 +55,8 @@ def welcome_screen():
         print('                     | | \\_  )| (   ) || |   | || (      ')
         print('                     | (___) || )   ( || )   ( || (____/\\ ')
         print('                     (_______)|/     \\||/     \\|(_______/')
-        print('                                                                                ')
-        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print('')
+        print('╞' + draw_line * 78 + '╡')
         print(f'                         ⇉ {msg} ⇇  ')
         welcome_input = input('prompt: ')
 
@@ -77,7 +80,7 @@ def player_name_screen():
     wrong_option = True
     while wrong_option:
         os.system('clear')
-        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('╒' + draw_line * 78 + '╕')
         print('                               _______  _______  ______  ')
         print('                     |\\     /|(  ___  )(  ____ )(  __  \\ ')
         print('                     | )   ( || (   ) || (    )|| (  \\  )')
@@ -95,8 +98,8 @@ def player_name_screen():
         print('                     | | \\_  )| (   ) || |   | || (      ')
         print('                     | (___) || )   ( || )   ( || (____/\\ ')
         print('                     (_______)|/     \\||/     \\|(_______/')
-        print('                                                                                ')
-        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print('')
+        print('╞' + draw_line * 78 + '╡')
         print(f'                             ⇉ {msg} ⇇  ')
         player_name_input = input('prompt: ').upper()
 
@@ -126,7 +129,7 @@ def options_screen(player_name):
     wrong_option = True
     while wrong_option:
         os.system('clear')
-        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('╒' + draw_line * 78 + '╕')
         print('')
         print('')
         print('')
@@ -134,18 +137,18 @@ def options_screen(player_name):
         print('')
         print('')
         print('')
-        print(f'                           Hi {player_name},')
+        print(draw_space * 27 + f'Hi {player_name},')
         print('')
-        print('                           Choose an Option:')
-        print('                             1 Play Game')
-        print('                             2 Exit Game')
-        print('')
-        print('')
+        print(draw_space * 27 + 'Choose an Option:')
+        print(draw_space * 29 + '1 Play Game')
+        print(draw_space * 29 + '2 Exit Game')
         print('')
         print('')
         print('')
         print('')
-        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print('')
+        print('')
+        print('╞' + draw_line * 78 + '╡')
         print(f'                           ⇉ {msg} ⇇  ')
         option_input = input('prompt: ')
 
@@ -196,9 +199,9 @@ def game_screen(player_name):
                 display += ' _ '
 
         os.system('clear')
-        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('╒' + draw_line * 78 + '╕')
         print(f'  Name: {player_name}')
-        print('╘══════════════════════════════════════════════════════════════════════════════╛')
+        print('╘' + draw_line * 78 + '╛')
         print('')
         print(f'  Maximum attempts: {maximum_attempts}')
         print(f'     Your attempts:  {attempt_counter}')
@@ -215,7 +218,7 @@ def game_screen(player_name):
         print('')
         print('')
         print('')
-        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print('╞' + draw_line * 78 + '╡')
         print(f'                  ⇉ {msg} ⇇  ')
         user_input = input('prompt: ').lower()
 
@@ -225,7 +228,10 @@ def game_screen(player_name):
             guessed.append(user_input)
             # if user guessed all letters
             if set(random_word) == set(guessed):
-                return ['congratulations', attempt_counter, maximum_attempts, random_word]
+                return ['congratulations',
+                        attempt_counter,
+                        maximum_attempts,
+                        random_word]
             # if word is not complete
             else:
                 msg = 'Correct Guess, Please enter next letter!'
@@ -252,9 +258,9 @@ def congrats_screen(player_name, attempt_counter, maximum_attempts):
     wrong_option = True
     while wrong_option:
         os.system('clear')
-        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('╒' + draw_line * 78 + '╕')
         print(f'  Name: {player_name}')
-        print('╘══════════════════════════════════════════════════════════════════════════════╛')
+        print('╘' + draw_line * 78 + '╛')
         print('')
         print('  Maximum attempts: 10')
         print(f'     Your attempts: {attempt_counter}')
@@ -271,7 +277,7 @@ def congrats_screen(player_name, attempt_counter, maximum_attempts):
         print('')
         print('')
         print('')
-        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print('╞' + draw_line * 78 + '╡')
         print(f'                          ⇉ {msg} ⇇  ')
         congrats_input = input('prompt: ')
 
@@ -297,18 +303,22 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
     wrong_option = True
     while wrong_option:
         os.system('clear')
-        print('╒══════════════════════════════════════════════════════════════════════════════╕')
+        print('╒' + draw_line * 78 + '╕')
         print(f'  Name: {player_name}')
-        print('╘══════════════════════════════════════════════════════════════════════════════╛')
+        print('╘' + draw_line * 78 + '╛')
         print('')
         print(f'  Maximum attempts: {maximum_attempts}')
         print(f'     Your attempts: {attempt_counter}')
         print('')
         print('')
         print('')
-        print(f'                    {player_name}, you tried but you FAILED this time.')
+        print(draw_space * 20 +
+              player_name +
+              ', you tried but you FAILED this time.')
         print('')
-        print(f'                    The word was "{random_word.upper()}"')
+        print(draw_space * 20 +
+              'The word was ' +
+              random_word.upper())
         print('')
         print('                           Choose an Option:')
         print('                             1 Play again')
@@ -316,7 +326,7 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
         print('')
         print('')
         print('')
-        print('╞══════════════════════════════════════════════════════════════════════════════╡')
+        print('╞' + draw_line * 78 + '╡')
         print(f'                          ⇉ {msg} ⇇  ')
         failed_input = input('prompt: ')
 
@@ -337,9 +347,9 @@ def goodbye_screen(player_name):
     allows user to enter any key to exit the game
     """
     os.system('clear')
-    print('╒══════════════════════════════════════════════════════════════════════════════╕')
+    print('╒' + draw_line * 78 + '╕')
     print(f'  Name: {player_name}')
-    print('╘══════════════════════════════════════════════════════════════════════════════╛')
+    print('╘' + draw_line * 78 + '╛')
     print('')
     print('')
     print('')
@@ -350,13 +360,13 @@ def goodbye_screen(player_name):
     print('                 | |  __  ___   ___   __| | |__  _   _  ___ ')
     print("                 | | |_ |/ _ \\ / _ \\ / _` | '_ \\| | | |/ _ \\ ")
     print('                 | |__| | (_) | (_) | (_| | |_) | |_| |  __/ ')
-    print('                  \\_____|\\___/ \\___/ \\__,_|_.__/ \\__, |\\___| ')
+    print(draw_space * 18 + '\\_____|\\___/ \\___/ \\__,_|_.__/ \\__, |\\___|')
     print('                                                  __/ | ')
     print('                                                 |___/ ')
     print('')
     print('')
     print('')
-    print('╞══════════════════════════════════════════════════════════════════════════════╡')
+    print('╞' + draw_line * 78 + '╡')
     print('                      ⇉ Thank you for playing this game. ⇇  ')
     time.sleep(3)
     os.system('clear')
