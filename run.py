@@ -6,12 +6,13 @@ import time
 
 draw_line = '═'
 draw_space = ' '
+attempt_counter = 0
+maximum_attempts = 10
 
 
 def random_word_function():
     """
     Chooses a random word from the list
-
     """
     words = ["grape",
              "orange",
@@ -119,7 +120,6 @@ def options_screen(player_name):
     Prints the option screen
     Gives the user options to play the game or exit
     Runs a loop to validate the user option input
-
     """
 
     # inital message
@@ -230,7 +230,6 @@ def game_screen(player_name):
             if set(random_word) == set(guessed):
                 return ['congratulations',
                         attempt_counter,
-                        maximum_attempts,
                         random_word]
             # if word is not complete
             else:
@@ -241,7 +240,7 @@ def game_screen(player_name):
             attempt_counter += 1
     # attempt maximum reached
     if attempt_counter == maximum_attempts:
-        return ['failed', attempt_counter, maximum_attempts, random_word]
+        return ['failed', attempt_counter, random_word]
 
 
 def congrats_screen(player_name, attempt_counter, maximum_attempts):
@@ -393,10 +392,12 @@ def main():
         # option screen - user selection "1"
         if option == '1':
             # call game screen
-            game_input, attempt_counter, maximum_attempts, random_word = game_screen(player_name)
+            game_input, attempt_counter, random_word = game_screen(player_name)
             # if user wins
             if game_input == 'congratulations':
-                congrats_input = congrats_screen(player_name, attempt_counter, maximum_attempts)
+                congrats_input = congrats_screen(player_name,
+                                                 attempt_counter,
+                                                 maximum_attempts)
                 if congrats_input == '1':
                     do_not_exit = True
                     option = '1'
@@ -404,7 +405,10 @@ def main():
                     do_not_exit = False
                     option = '2'
             if game_input == 'failed':
-                congrats_input = failed_screen(player_name, attempt_counter, maximum_attempts, random_word)
+                congrats_input = failed_screen(player_name,
+                                               attempt_counter,
+                                               maximum_attempts,
+                                               random_word)
                 if congrats_input == '1':
                     do_not_exit = True
                     option = '1'
