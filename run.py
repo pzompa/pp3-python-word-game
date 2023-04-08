@@ -3,11 +3,14 @@
 import os
 import random
 import time
+import colorama
+from colorama import Fore
+
+# Initialize colorama
+colorama.init(autoreset=True)
 
 draw_line = '═'
 draw_space = ' '
-attempt_counter = 0
-maximum_attempts = 10
 
 
 def random_word_function():
@@ -18,7 +21,7 @@ def random_word_function():
              "orange",
              "mango",
              "watermelon",
-             "lime",
+             "lemon",
              "date",
              "banana",
              "apple",
@@ -33,7 +36,7 @@ def welcome_screen():
     Prints Initial Game Screen
     Gives option to continue the game
     """
-    msg = 'Press ENTER to continue'
+    msg = (Fore.BLUE + 'Press ENTER to continue')
 
     wrong_option = True
     while wrong_option:
@@ -67,7 +70,7 @@ def welcome_screen():
 
         # if user choice invalid - different message - loop
         else:
-            msg = 'Press ENTER'
+            msg = (Fore.RED + 'Press ENTER')
 
 
 def player_name_screen():
@@ -76,7 +79,7 @@ def player_name_screen():
     Prints screen
     accepts user input and returns player's name
     """
-    msg = 'Type your NAME'
+    msg = (Fore.BLUE + 'Type your NAME')
 
     wrong_option = True
     while wrong_option:
@@ -110,7 +113,7 @@ def player_name_screen():
 
         # if user choice invalid - different message - loop
         else:
-            msg = 'Type only your NAME'
+            msg = (Fore.RED + 'Type your NAME')
 
     return player_name_input
 
@@ -123,7 +126,7 @@ def options_screen(player_name):
     """
 
     # inital message
-    msg = 'Type an option NUMBER'
+    msg = (Fore.BLUE + 'Type an option NUMBER')
 
     # user input loop
     wrong_option = True
@@ -137,11 +140,11 @@ def options_screen(player_name):
         print('')
         print('')
         print('')
-        print(draw_space * 27 + f'Hi {player_name},')
+        print(draw_space * 27 + f'{Fore.YELLOW}Hi {player_name},')
         print('')
         print(draw_space * 27 + 'Choose an Option:')
-        print(draw_space * 29 + '1 Play Game')
-        print(draw_space * 29 + '2 Exit Game')
+        print(draw_space * 29 + (Fore.BLUE + '1 Play Game'))
+        print(draw_space * 29 + (Fore.BLUE + '2 Exit Game'))
         print('')
         print('')
         print('')
@@ -158,13 +161,13 @@ def options_screen(player_name):
 
         # if user choice invalid - different message - loop
         else:
-            msg = 'Choose only 1 or 2'
+            msg = (Fore.RED + 'Choose only 1 or 2')
 
     # return valid user input
     return option_input
 
 
-def game_screen(player_name):
+def game_scrn(player_name):
     """
     Main Game Code
     accepts and validates user input
@@ -179,18 +182,18 @@ def game_screen(player_name):
 
     # setup variables for game logic
     maximum_attempts = 10
-    attempt_counter = 0
+    a_counter = 0
     user_input = ''
     display = ''
     guessed = []
 
     # inital message
-    msg = 'Type only LETTERS a-z'
+    msg = (Fore.BLUE + 'Type only LETTERS a-z')
 
     # for hint
     word_length = len(random_word)
 
-    while attempt_counter < maximum_attempts:
+    while a_counter < maximum_attempts:
         display = ''
         for letter in random_word:
             if letter in guessed:
@@ -200,13 +203,13 @@ def game_screen(player_name):
 
         os.system('clear')
         print('╒' + draw_line * 78 + '╕')
-        print(f'  Name: {player_name}')
+        print(f'  Name: {Fore.YELLOW}{player_name}')
         print('╘' + draw_line * 78 + '╛')
         print('')
-        print(f'  Maximum attempts: {maximum_attempts}')
-        print(f'     Your attempts:  {attempt_counter}')
+        print(f' {Fore.BLUE} Maximum attempts: {maximum_attempts}')
+        print(f' {Fore.BLUE}    Your attempts: {Fore.RED} {a_counter}')
         print('')
-        print(f'    Its a Fruit and has {word_length} letters')
+        print(f'  {Fore.RED}  Its a Fruit and has {word_length} letters')
         print('')
         print('')
         print('')
@@ -228,19 +231,17 @@ def game_screen(player_name):
             guessed.append(user_input)
             # if user guessed all letters
             if set(random_word) == set(guessed):
-                return ['congratulations',
-                        attempt_counter,
-                        random_word]
+                return ['c', a_counter, maximum_attempts, random_word]
             # if word is not complete
             else:
-                msg = 'Correct Guess, Please enter next letter!'
+                msg = (Fore.GREEN + 'Correct Guess, Please enter next letter!')
         # if wrong user input
         else:
-            msg = 'Oops, that was not in the word, please try again'
-            attempt_counter += 1
+            msg = (Fore.RED + 'Oops, worng word, please try again')
+            a_counter += 1
     # attempt maximum reached
-    if attempt_counter == maximum_attempts:
-        return ['failed', attempt_counter, random_word]
+    if a_counter == maximum_attempts:
+        return ['failed', a_counter, maximum_attempts, random_word]
 
 
 def congrats_screen(player_name, attempt_counter, maximum_attempts):
@@ -252,27 +253,27 @@ def congrats_screen(player_name, attempt_counter, maximum_attempts):
     # user input loop
 
     # inital message
-    msg = 'Type an option NUMBER'
+    msg = (Fore.BLUE + 'Type an option NUMBER')
 
     wrong_option = True
     while wrong_option:
         os.system('clear')
         print('╒' + draw_line * 78 + '╕')
-        print(f'  Name: {player_name}')
+        print(f'  Name:{Fore.YELLOW} {player_name}')
         print('╘' + draw_line * 78 + '╛')
         print('')
-        print('  Maximum attempts: 10')
-        print(f'     Your attempts: {attempt_counter}')
+        print(f' {Fore.BLUE} Maximum attempts: 10')
+        print(f' {Fore.BLUE}    Your attempts:{Fore.RED} {attempt_counter}')
         print('')
         print('')
         print('')
-        print(f'                          {player_name}, CONGRATULATIONS.')
-        print('                             You are a genius!')
+        print(draw_space * 25 + f'{player_name},{Fore.YELLOW} CONGRATULATIONS')
+        print(draw_space * 27 + 'You are a genius!')
         print('')
         print('')
         print('                           Choose an Option:')
-        print('                             1 Play again')
-        print('                             2 Exit Game')
+        print((Fore.BLUE + '                             1 Play again'))
+        print((Fore.BLUE + '                             2 Exit Game'))
         print('')
         print('')
         print('')
@@ -286,7 +287,7 @@ def congrats_screen(player_name, attempt_counter, maximum_attempts):
 
         # if user choice invalid - different message - loop
         else:
-            msg = 'Choose only 1 or 2'
+            msg = (Fore.BLUE + 'Choose only 1 or 2')
     return congrats_input
 
 
@@ -296,32 +297,32 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
     gives the user options to exit game or to play again
     """
     # inital message
-    msg = 'Type an option NUMBER'
+    msg = (Fore.BLUE + 'Type an option NUMBER')
 
     # user input loop
     wrong_option = True
     while wrong_option:
         os.system('clear')
         print('╒' + draw_line * 78 + '╕')
-        print(f'  Name: {player_name}')
+        print(f'  Name: {Fore.BLUE}{player_name}')
         print('╘' + draw_line * 78 + '╛')
         print('')
-        print(f'  Maximum attempts: {maximum_attempts}')
-        print(f'     Your attempts: {attempt_counter}')
+        print(f' {Fore.BLUE} Maximum attempts: {maximum_attempts}')
+        print(f'  {Fore.BLUE}   Your attempts:{Fore.RED} {attempt_counter}')
         print('')
         print('')
         print('')
         print(draw_space * 20 +
-              player_name +
-              ', you tried but you FAILED this time.')
+              (Fore.RED + player_name +
+               ', you tried but you FAILED this time.'))
         print('')
         print(draw_space * 20 +
-              'The word was ' +
-              random_word.upper())
+              'The word was ' + (Fore.YELLOW +
+                                 random_word.upper()))
         print('')
         print('                           Choose an Option:')
-        print('                             1 Play again')
-        print('                             2 Exit Game')
+        print((Fore.BLUE + '                             1 Play again'))
+        print((Fore.BLUE + '                             2 Exit Game'))
         print('')
         print('')
         print('')
@@ -335,7 +336,7 @@ def failed_screen(player_name, attempt_counter, maximum_attempts, random_word):
 
         # if user choice invalid - different message - loop
         else:
-            msg = 'Choose only 1 or 2'
+            msg = (Fore.RED + 'Choose only 1 or 2')
 
     return failed_input
 
@@ -347,7 +348,7 @@ def goodbye_screen(player_name):
     """
     os.system('clear')
     print('╒' + draw_line * 78 + '╕')
-    print(f'  Name: {player_name}')
+    print(f'{Fore.YELLOW} Name: {player_name}')
     print('╘' + draw_line * 78 + '╛')
     print('')
     print('')
@@ -366,7 +367,7 @@ def goodbye_screen(player_name):
     print('')
     print('')
     print('╞' + draw_line * 78 + '╡')
-    print('                      ⇉ Thank you for playing this game. ⇇  ')
+    print((Fore.BLUE + draw_space * 25 + '⇉ Thank you for playing!. ⇇'))
     time.sleep(3)
     os.system('clear')
 
@@ -392,9 +393,9 @@ def main():
         # option screen - user selection "1"
         if option == '1':
             # call game screen
-            game_input, attempt_counter, random_word = game_screen(player_name)
+            game_input, attempt_counter, maximum_attempts, random_word = game_scrn(player_name)
             # if user wins
-            if game_input == 'congratulations':
+            if game_input == 'c':
                 congrats_input = congrats_screen(player_name,
                                                  attempt_counter,
                                                  maximum_attempts)
