@@ -94,7 +94,7 @@ def player_name_screen():
         print('')
         print('')
         print('')
-        print('Rules:')
+        print(' Rules:')
         print('')
         print('  1. You have total 10 attempts to guess the word.')
         print('  2. Every false guess will be counted as one attempt.')
@@ -108,7 +108,7 @@ def player_name_screen():
         print('')
         print('╞' + draw_line * 78 + '╡')
         print(f'                             ⇉ {msg} ⇇  ')
-        player_name_input = input('prompt: ').upper()
+        player_name_input = input(' prompt: ').upper()
 
         # if user choice valid - break loop
         if player_name_input.isalpha():
