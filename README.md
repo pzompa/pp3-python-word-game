@@ -45,16 +45,19 @@ This project is a Python terminal game,  created for people to play the classic 
 - This screen greets the user with a beautiful Ascii logo of the game. It gives the user option to press enter to play the game 
 - The Ascii graffiti was generated using Patorjk.com
 		
-Screen shot----
+![initial game screeen](/asset/images/initial_screen.png)
 
 ## Player Name Screen
-This screen asks the user to enter their name to personalise the game.
+- This screen asks the user to enter their name to personalise the game.
+- (to be done)
 
-Screen shot----
+![](/asset/images/welcome_rules_name_screen.png)
 
 ## Option Screen
 - This screen addresses the user by name 
 - Gives the user options to play or the exit the game
+
+![](/asset/images/options_screen.png)
 		
 ### Option Screen - menu "1. Play Game"
 	
@@ -70,18 +73,30 @@ Screen shot----
 - This screen displays a beautiful goodbye screen with a message thanking the user for playing the game
 - This screen goes blank after 3 seconds and the game is over.
 
-Screen shot...
-
 ## Game Screen
-Initial game screen
+
+Main Game Screen
+![](/asset/images/game_screen.png)
 
 Correct guessed
+![](/asset/images/game_screen_right_guess.png)
 
 Incorrect guessed
+![](/asset/images/game_screen_wrong_guess.png)
 
 Failed screen
+![](/asset/images/failed_screen.png)
 
 Success screen
+![](/asset/images/congrats_screen.png)
+
+Goodbye screen
+![](/asset/images/goodbye_screen.png)
+
+End screen
+- application stops
+- screen is cleared
+![](/asset/images/end_game_black_screen.png)
 
 # Flowchart
 - This was my initial plan for the game. this flowchart was created using [Lucid Charts](https://lucid.app/documents#/dashboard).
