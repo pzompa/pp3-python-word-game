@@ -242,7 +242,7 @@ def game_scrn(player_name):
         elif user_input == '2':
             return ['exit', a_counter, maximum_attempts, random_word]
         else:
-            msg = (Fore.RED + 'Oops, worng word, please try again')
+            msg = (Fore.RED + 'Oops, wrong guess, please try again')
             a_counter += 1
     # attempt maximum reached
     if a_counter == maximum_attempts:
