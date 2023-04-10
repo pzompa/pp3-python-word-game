@@ -20,7 +20,7 @@ def random_word_function():
     words = ["grape",
              "orange",
              "mango",
-             "watermelon",
+             "kiwi",
              "lemon",
              "date",
              "banana",
