@@ -47,22 +47,22 @@
 
 # Introduction
 This project is a Python terminal game,  created for people to play the classic word guessing game.
-- The game can be found [here](https://pp3-python-word-game.herokuapp.com/).
+- The deployed game can be found [here](https://pp3-python-word-game.herokuapp.com/).
 - The repository can be found [here](https://github.com/pzompa/pp3-python-word-game).
 
 ## Site Goals
-- To offer entertainment to the user who wants to get away from their daily activities and pass their time..
-- Provide the user with simple instruction to play the game
-- Give options to play or exit the game
+- To offer entertainment to the user who wants to get away from their daily activities and pass their time.
+- Provide the user with simple instruction to play the game.
+- Give options to play or exit the game.
 
 ## For new visitor
-- To play the word guessing game and charge their brain.
-- To easily understand how to play the game
-- To easily navigate and quit whenever they wish to.
+- To play the word guessing game and recharge their brain.
+- To easily understand how to play the game.
+- To easily quit whenever they wish to.
 
 ## For Returning visitors
-- To practice their guessing skills
-- To play guessing game any number of times and improve their guessing skills
+- To practice their guessing skills.
+- To play guessing game any number of times and improve their guessing skills further.
 
 # Structure
 <img src="asset/images/initial%20gameflow%20idea.png" height="500">
@@ -73,8 +73,10 @@ This project is a Python terminal game,  created for people to play the classic 
 - The word is encrypted with a '-' for each letters.
 - The computer accepts the user input and gives responsive feedback.
 - If the user guessed the correct letter, the letter will be displayed.
-- If the user guessed a wrong letter or an invalid entry, the attempt counter will increase by one.
+- If the user guessed a wrong letter, the attempt counter will increase by one.
 - If the user exhaust all the 10 attempts allowed, then the user loses the game and correct word will be revealed.
+- If the user guessed a correct letter or guessed all the letters in the word, then the user wins the game.
+- User is always given the option to quit the game at any point of the game.
 
 ## Future features to be implemented
 - To store and update user specific data on google sheets.
@@ -84,20 +86,22 @@ This project is a Python terminal game,  created for people to play the classic 
 
 ## Screens
 ### Welcome Screen
-- This screen greets the user with a beautiful Ascii logo of the game. It gives the user option to press enter to play the game 
-- The Ascii graffiti was generated using Patorjk.com
+- This screen greets the user with a beautiful Ascii logo of the game. It gives the user option to press enter to play the game .
+- The Ascii graffiti was generated using Patorjk.com.
 		
 ![initial game screeen](/asset/images/initial_screen.png)
 
 ### Player Name Screen
-- This screen asks the user to enter their name to personalise the game.
-- (to be done)
+- This screen displays the welcome message.
+- asks the user to enter their name to personalise the game.
+- informs the user with the rules of the game.
+
 
 ![](/asset/images/welcome_rules_name_screen.png)
 
 ### Option Screen
-- This screen addresses the user by name 
-- Gives the user options to play or the exit the game
+- This screen addresses the user by name.
+- Gives the user options to play or the exit the game.
 
 ![](/asset/images/options_screen.png)
 		
@@ -107,12 +111,13 @@ This project is a Python terminal game,  created for people to play the classic 
 - This screen gives the user a hint of the random word.
 - And prints blank spaces for each of the letters in the word
 - After guessing a correct letter, the guessed letter replaces the blank space.
+- If user guessed all the letters correctly, then he wins the game.
 - If the user guesses a letter that isn't in the word, the "attempts counter" increases
 - The user will be informed that the guessed letter is not in the word.
 - If the user uses up 10 allowed attempts, and still not guessed all the letters in the word, then the user looses the game and the word is shown.
 
 #### Option Screen - menu "2. Exit Game"
-- This screen displays a beautiful goodbye screen with a message thanking the user for playing the game
+- This screen displays a beautiful goodbye screen with a message thanking the user for playing the game.
 - This screen goes blank after 3 seconds and the game is over.
 
 ### Game Screen
@@ -144,7 +149,7 @@ This project is a Python terminal game,  created for people to play the classic 
 - These flowchart were created using [Lucid Charts](https://lucid.app/documents#/dashboard).
 
 ## Initial idea 
-- This was my initial plan for the game
+- This was my initial plan for the game.
 ![](/asset/images/initial%20gameflow%20idea.png)
 
 ## Basic game flow 
@@ -216,7 +221,7 @@ This project is a Python terminal game,  created for people to play the classic 
 
 # Bugs
 ## Fixed Bugs
-- [PEP 8 pycodestlye](https://pycodestyle.pycqa.org/en/latest/intro.html) found issues  with the Ascii art especially with "\". I fixed them by replacing them with "\\".
+- [PEP 8 pycodestlye](https://pycodestyle.pycqa.org/en/latest/intro.html) found issues  with the Ascii art especially with `\`. I fixed them by replacing them with `\\`.
 - It also found white spaces in the code which was fixed.
 - It also found issues with the length of some lines which was fixed by using (character * n) expression.
 
@@ -266,10 +271,10 @@ These steps were followed to deploy this project to Heroku:
 # Credits
 - Lessons from the Code Institute and the love Sandwiches in learning and understanding python program.
 - Watched many YouTube tutorials to learn and understand python programming and took some inspiration from these videos but was created from my own understanding.
-- (YouTube) [Build a Word Guessing Game in Python | Python Tutorials For Beginners](https://youtu.be/M1t4RJ5XRHE)
-- (YouTube) [Building a Guessing Game | Python | Tutorial 21](https://youtu.be/B9ORjeQlPOA)
+   - (YouTube) [Build a Word Guessing Game in Python | Python Tutorials For Beginners](https://youtu.be/M1t4RJ5XRHE)
+   - (YouTube) [Building a Guessing Game | Python | Tutorial 21](https://youtu.be/B9ORjeQlPOA)
 - Used google extensively to understand and clear doubts throughout this project.
-- Stack overflow, W3 Schools, Educative.io was extensively used throughout this project.
+- [W3 Schools](https://www.w3schools.com/), [Educative.io](https://www.educative.io/) and [Stack overflow](https://stackoverflow.com/) was extensively used throughout this project.
 - Ascii Art was made with [Patorjk Website](http://patorjk.com/software/taag/#p=about&f=Graffiti&t=Type%20Something%20).
 - Code Institute Mentor Gareth McGiir: Grateful for his useful Tips and advices.
 - My family for their support and patience
