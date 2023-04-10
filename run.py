@@ -79,29 +79,32 @@ def player_name_screen():
     Prints screen
     accepts user input and returns player's name
     """
+    greeting1 = 'Welcome to the Word Guessing Game'
+    greeting2 = 'Good to see you here'
+    name_request = 'PLEASE ENTER YOUR NAME'
     msg = (Fore.BLUE + 'Type your NAME')
 
     wrong_option = True
     while wrong_option:
         os.system('clear')
         print('╒' + draw_line * 78 + '╕')
-        print('                               _______  _______  ______  ')
-        print('                     |\\     /|(  ___  )(  ____ )(  __  \\ ')
-        print('                     | )   ( || (   ) || (    )|| (  \\  )')
-        print('                     | | _ | || |   | || (____)|| |   ) |')
-        print('                     | |( )| || |   | ||     __)| |   | |')
-        print('                     | || || || |   | || (\\ (   | |   ) |')
-        print('                     | () () || (___) || ) \\ \\__| (__/  )')
-        print('                     (_______)(_______)|/   \\__/(______/ ')
-        print('                                                         ')
-        print('                      _______  _______  _______  _______ ')
-        print('                     (  ____ \\(  ___  )(       )(  ____ \\ ')
-        print('                     | (    \\/| (   ) || () () || (    \\/')
-        print('                     | |      | (___) || || || || (__    ')
-        print('                     | | ____ |  ___  || |(_)| ||  __)   ')
-        print('                     | | \\_  )| (   ) || |   | || (      ')
-        print('                     | (___) || )   ( || )   ( || (____/\\ ')
-        print('                     (_______)|/     \\||/     \\|(_______/')
+        print('')
+        print((Fore.YELLOW + draw_space * 23 + greeting1))
+        print((Fore.YELLOW + draw_space * 28 + greeting2))
+        print('')
+        print('')
+        print('')
+        print('Rules:')
+        print('')
+        print('  1. You have total 10 attempts to guess the word.')
+        print('  2. Every false guess will be counted as one attempt.')
+        print('')
+        print('                                   Have fun!')
+        print('')
+        print('')
+        print('')
+        print((Fore.RED + draw_space * 28 + name_request))
+        print('')
         print('')
         print('╞' + draw_line * 78 + '╡')
         print(f'                             ⇉ {msg} ⇇  ')
@@ -220,7 +223,7 @@ def game_scrn(player_name):
         print('')
         print('')
         print('')
-        print((Fore.RED +' Type "2" anytime to exit'))
+        print((Fore.RED + ' Type "2" anytime to exit'))
         print('╞' + draw_line * 78 + '╡')
         print(f'                  ⇉ {msg} ⇇  ')
         user_input = input('prompt: ').lower()
