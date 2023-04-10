@@ -105,7 +105,47 @@ End screen
 # Testing
 Functional Testing
 	
-(Testing table to be done)
+| Test | Action | Result | Notes |
+| --- | --- | --- | --- | 
+| https://pp3-python-word-game.herokuapp.com/ | Application can be reached via heroku URL | Application can be reached via heroku URL | Pass
+| enter key | pressed the enter key | Enter key takes you to the name screen | Pass |
+|  |  | Welcome message and rules are displayed as intented | Pass |
+|  |  | Colorama is rendered properly | Pass |
+|  |  | Prompt accepting user input  | Pass |
+| player name | enter valid input | valid inputs are accepted | Pass |
+|  | enter invalid input | invalid input is rejected | Pass |
+| Option screen |  | Colorama is rendered properly | Pass |
+|  |  | Player name is displayed properly | Pass |
+| Option screen, option 1 | type 1 | Option 1 takes you properly to the game screen | Pass |
+| Option screen, option 2 | type 2 | Option 2 takes you properly to the goodbye screen | Pass |
+| Game screen |  | Colorama is rendered properly | Pass |
+|  |  | Playername is displayed properly | Pass |
+|  |  | Both Counters are displayed and functions properly | Pass |
+|  |  | Option to quit game is displayed properly | Pass |
+| Game screen, User Input | valid input - correct letter | Message is shown properly | Pass |
+|  |  | Valid input is accepted as intented | Pass |
+|  |  | letter is revealed to the user | Pass |
+| Game screen, User Input | valid input - incorrect letter | Message is show properly | Pass |
+|  |  | Attempt counter is incremented properly | Pass |
+| Game screen, User Input  | Invalid Input | Invalid message is displayed and requests for valid entry , as intended. | Pass |
+| Game screen, User Input | Option "2" Exit game | Goodbye screen is displayed as intended | Pass |
+| Congratulation Screen |  | Appropriate message is displayed properly | Pass |
+|  |  | Colorama is rendered properly | Pass |
+|  |  | Playername is displayed properly | Pass |
+|  |  | Both Counters are displayed and functions as intended | Pass |
+|  |  | Options to play and quit game is displayed properly | Pass |
+| Congratulation screen, User Input | Option 1 : Play again | Takes you to the Game screen to play the game | Pass |
+| Congratulation screen, User Input | Option 2 : Exit game | Takes you to the Goodbye screen | Pass |
+| Failed screen |  | Appropriate message is displayed properly | Pass |
+|  |  | Colorama is rendered properly | Pass |
+|  |  | Playername is displayed properly | Pass |
+|  |  | Both Counters are displayed and functions as intended | Pass |
+|  |  | Options to play and quit game is displayed properly | Pass |
+|  |  | Attempt counter is incrementd properly | Pass |
+| Failed screen, User Input | Option 1 : Play again | Takes you to the Game screen to play the game | Pass |
+| Failed screen, User Input | Option 2 : Exit game | Takes you to the Goodbye screen | Pass |
+| Goodbye screen |  | Screen is rendered properly | Pass |
+|  |  | The screen is cleared after 3 seconds as intended | Pass |
 
 # Code Validation
 - PEP8 pycodestyle
