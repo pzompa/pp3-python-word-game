@@ -379,7 +379,7 @@ def goodbye_screen(player_name):
 
 def main():
     """
-    Runs all program function to Start Game
+    Runs all program function to Start the Game
     """
     # initial screen - game start
     welcome_screen()
