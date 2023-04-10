@@ -227,7 +227,7 @@ def game_scrn(player_name):
         print('╞' + draw_line * 78 + '╡')
         print(f'                  ⇉ {msg} ⇇  ')
         user_input = input('prompt: ').lower()
-        
+
         # if user input is in random word
         if user_input in random_word:
             # append to guessed list

@@ -1,4 +1,4 @@
-PP3 Python Word Game Project
+# PP3 Python Project -Word Guessing Game
 
 # Introduction
 This project is a Python terminal game,  created for people to play the classic word guessing game.
@@ -10,11 +10,7 @@ This project is a Python terminal game,  created for people to play the classic 
 - Provide the user with simple instruction to play the game
 - Give options to play or exit the game
 
-
-## Target Audience
-(to be done)
-
-## For new users
+## For new visitor
 - To play the word guessing game and charge their brain.
 - To easily understand how to play the game
 - To easily navigate and quit whenever they wish to.
@@ -24,8 +20,9 @@ This project is a Python terminal game,  created for people to play the classic 
 - To play guessing game any number of times and improve their guessing skills
 
 # Structure
-(to be done)
-# Features
+<img src="asset/images/initial%20gameflow%20idea.png" height="500">
+
+## Features
 - A random word will be generated.
 - The user is given a hint and the total number of letters in the word.
 - The word is encrypted with a '-' for each letters.
@@ -40,26 +37,26 @@ This project is a Python terminal game,  created for people to play the classic 
 - To generate random word from external dictionary.
 - To give word specific hints to make the guessing game more interesting.
 
-# Game Screens
-## Welcome Screen
+## Screens
+### Welcome Screen
 - This screen greets the user with a beautiful Ascii logo of the game. It gives the user option to press enter to play the game 
 - The Ascii graffiti was generated using Patorjk.com
 		
 ![initial game screeen](/asset/images/initial_screen.png)
 
-## Player Name Screen
+### Player Name Screen
 - This screen asks the user to enter their name to personalise the game.
 - (to be done)
 
 ![](/asset/images/welcome_rules_name_screen.png)
 
-## Option Screen
+### Option Screen
 - This screen addresses the user by name 
 - Gives the user options to play or the exit the game
 
 ![](/asset/images/options_screen.png)
 		
-### Option Screen - menu "1. Play Game"
+#### Option Screen - menu "1. Play Game"
 	
 - This screen shows the information about the maximum attempts allowed for the game and the number of attempts made by the user.
 - This screen gives the user a hint of the random word.
@@ -69,11 +66,11 @@ This project is a Python terminal game,  created for people to play the classic 
 - The user will be informed that the guessed letter is not in the word.
 - If the user uses up 10 allowed attempts, and still not guessed all the letters in the word, then the user looses the game and the word is shown.
 
-### Option Screen - menu "2. Exit Game"
+#### Option Screen - menu "2. Exit Game"
 - This screen displays a beautiful goodbye screen with a message thanking the user for playing the game
 - This screen goes blank after 3 seconds and the game is over.
 
-## Game Screen
+### Game Screen
 
 Main Game Screen
 ![](/asset/images/game_screen.png)
@@ -98,10 +95,22 @@ End screen
 - screen is cleared
 ![](/asset/images/end_game_black_screen.png)
 
-# Flowchart
-- This was my initial plan for the game. this flowchart was created using [Lucid Charts](https://lucid.app/documents#/dashboard).
+# Flowcharts
+- These flowchart were created using [Lucid Charts](https://lucid.app/documents#/dashboard).
 
+## This was my initial plan for the game.
+![](/asset/images/initial%20gameflow%20idea.png)
 
+## Basic game flow 
+![](/asset/images/Game%20Flow.png)
+
+## Control flow - if/while loop
+![](/asset/images/main%20function%20control%20flow.png)
+
+## Function call flow 
+![](/asset/images/Code%20Function%20flow.png)
+
+ 
 # Testing
 Functional Testing
 	
@@ -148,13 +157,17 @@ Functional Testing
 |  |  | The screen is cleared after 3 seconds as intended | Pass |
 
 # Code Validation
-- PEP8 pycodestyle
+## PEP8
+- pep8 error E501:
+  - One cosmetic error: "run.py:396:80: E501 line too long (95 > 79 characters)" PEP8 issue still exists.
+  - I decided against condensing the line for code readability reasons.
 
-Screen shot------
+## PEP8 pycodestyle - result
+![](/asset/images/PEP8-pycodestyle%20result.png)
 
-- Code Institute Linter
+## Code Institute: CI Python Linter - result
+![](/asset/images/CI%20Python%20Linter.png)
 
-Screen shot------
 
 ## Fixed Bugs
 - [PEP 8 pycodestlye](https://pycodestyle.pycqa.org/en/latest/intro.html) found issues  with the Ascii art especially with "\". I fixed them by replacing them with "\\".
