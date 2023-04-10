@@ -220,7 +220,7 @@ def game_scrn(player_name):
         print('')
         print('')
         print('')
-        print('')
+        print((Fore.RED +' Type "2" anytime to exit'))
         print('╞' + draw_line * 78 + '╡')
         print(f'                  ⇉ {msg} ⇇  ')
         user_input = input('prompt: ').lower()
@@ -236,6 +236,8 @@ def game_scrn(player_name):
             else:
                 msg = (Fore.GREEN + 'Correct Guess, Please enter next letter!')
         # if wrong user input
+        elif user_input == '2':
+            return ['exit', a_counter, maximum_attempts, random_word]
         else:
             msg = (Fore.RED + 'Oops, worng word, please try again')
             a_counter += 1
@@ -416,6 +418,9 @@ def main():
                 elif congrats_input == '2':
                     do_not_exit = False
                     option = '2'
+            if game_input == 'exit':
+                goodbye_screen(player_name)
+                return 'Thank you'
         if option == '2':
             break
     if option == '2':
