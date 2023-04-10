@@ -1,5 +1,50 @@
 # PP3 Python Project -Word Guessing Game
 
+# Table of Content
+1. [Introduction](#introduction)
+   1. [Site Goals](#site-goals)
+   2. [For new visitors](#for-new-visitor)
+   3. [For Returning visitors](#for-returning-visitors)
+2. [Structure](#structure)
+   1. [Features](#features)
+   2. [Future features to be implemented](#future-features-to-be-implemented)
+   3. [Screens](#screens)
+      1. [Welcome Screen](#welcome-screen)
+      2. [Player Name Screen](#player-name-screen)
+      3. [Option Screen](#option-screen)
+         1. [Option Screen - menu "1. Play Game"](#option-screen---menu-1-play-game)
+         2. [Option Screen - menu "2. Exit Game"](#option-screen---menu-2-exit-game)
+      4. [Game Screen](#game-screen)
+         1. [Main Game Screen](#main-game-screen)
+         2. [Correct guessed](#correct-guessed)
+         3. [Incorrect guessed](#incorrect-guessed)
+         4. [Failed screen](#failed-screen)
+         5. [Success screen](#success-screen)
+         6. [Goodbye screen](#goodbye-screen)
+         7. [End screen](#end-screen)
+3. [Flowcharts](#flowcharts)
+   1. [Initial idea](#initial-idea)
+   2. [Basic game flow ](#basic-game-flow)
+   3. [Control flow of the main()](#control-flow-of-the-main)
+   4. [Function call flow](#function-call-flow)
+4. [Testing](#testing)
+   1. [Functional Testing (Table)](#functional-testing)
+5. [Code Validation](#code-validation)
+   1. [PEP8](#pep8)
+      1. [PEP8 pycodestyle - result](#pep8-pycodestyle---result)
+      2. [Code Institute: CI Python Linter - result](#code-institute-ci-python-linter---result)
+6. [Bugs](#bugs)
+   1. [Fixed Bugs](#fixed-bugs)
+   2. [Unfixed Bugs](#unfixed-bugs)
+7. [Technologies used](#technologies-used)
+   1. [Language](#language)
+8. [Environment used](#environment-used)
+9. [Deployment](#deployment)
+   1. [Version Control](#version-control)
+   2. [Heroku Deployment](#version-control)
+   3. [Clone Locally](#clone-locally)
+10. [Credits](#credits)
+
 # Introduction
 This project is a Python terminal game,  created for people to play the classic word guessing game.
 - The game can be found [here](https://pp3-python-word-game.herokuapp.com/).
@@ -72,25 +117,25 @@ This project is a Python terminal game,  created for people to play the classic 
 
 ### Game Screen
 
-Main Game Screen
+#### Main Game Screen
 ![](/asset/images/game_screen.png)
 
-Correct guessed
+#### Correct guessed
 ![](/asset/images/game_screen_right_guess.png)
 
-Incorrect guessed
+#### Incorrect guessed
 ![](/asset/images/game_screen_wrong_guess.png)
 
-Failed screen
+#### Failed screen
 ![](/asset/images/failed_screen.png)
 
-Success screen
+#### Success screen
 ![](/asset/images/congrats_screen.png)
 
-Goodbye screen
+#### Goodbye screen
 ![](/asset/images/goodbye_screen.png)
 
-End screen
+#### End screen
 - application stops
 - screen is cleared
 ![](/asset/images/end_game_black_screen.png)
@@ -98,13 +143,14 @@ End screen
 # Flowcharts
 - These flowchart were created using [Lucid Charts](https://lucid.app/documents#/dashboard).
 
-## This was my initial plan for the game.
+## Initial idea 
+- This was my initial plan for the game
 ![](/asset/images/initial%20gameflow%20idea.png)
 
 ## Basic game flow 
 ![](/asset/images/Game%20Flow.png)
 
-## Control flow - if/while loop
+## Control flow of the main()
 ![](/asset/images/main%20function%20control%20flow.png)
 
 ## Function call flow 
@@ -112,7 +158,7 @@ End screen
 
  
 # Testing
-Functional Testing
+## Functional Testing
 	
 | Test | Action | Result | Notes |
 | --- | --- | --- | --- | 
@@ -162,13 +208,13 @@ Functional Testing
   - One cosmetic error: "run.py:396:80: E501 line too long (95 > 79 characters)" PEP8 issue still exists.
   - I decided against condensing the line for code readability reasons.
 
-## PEP8 pycodestyle - result
+### PEP8 pycodestyle - result
 ![](/asset/images/PEP8-pycodestyle%20result.png)
 
-## Code Institute: CI Python Linter - result
+### Code Institute: CI Python Linter - result
 ![](/asset/images/CI%20Python%20Linter.png)
 
-
+# Bugs
 ## Fixed Bugs
 - [PEP 8 pycodestlye](https://pycodestyle.pycqa.org/en/latest/intro.html) found issues  with the Ascii art especially with "\". I fixed them by replacing them with "\\".
 - It also found white spaces in the code which was fixed.
@@ -180,7 +226,7 @@ Functional Testing
   - I decided against condensing the line for code readability reasons.
 
 # Technologies used
-Language:
+## Language:
 - [Python](https://www.python.org/): Python was the main language used  to build the whole application.
 - Markdown: Markdown was used to write the README.md
 
@@ -212,7 +258,7 @@ These steps were followed to deploy this project to Heroku:
 - Scroll down to Manual Deploy, select "main" branch and click "Deploy Branch".
 - The app will now be deployed to heroku.
 		
-Clone Locally
+## Clone Locally
 - Open IDE of choice and type the following into the terminal:
 - `git clone https://github.com/pzompa/pp3-python-word-game`		
 - Project will now be cloned locally.
