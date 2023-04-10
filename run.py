@@ -372,7 +372,7 @@ def goodbye_screen(player_name):
     print('')
     print('')
     print('╞' + draw_line * 78 + '╡')
-    print((Fore.BLUE + draw_space * 25 + '⇉ Thank you for playing!. ⇇'))
+    print((Fore.BLUE + draw_space * 25 + '⇉ Thank you for playing! ⇇'))
     time.sleep(3)
     os.system('clear')
 
