@@ -111,7 +111,7 @@ def player_name_screen():
         player_name_input = input(' prompt: ').upper()
 
         # if user choice valid - break loop
-        if player_name_input.isalpha():
+        if player_name_input:
             wrong_option = False
 
         # if user choice invalid - different message - loop
