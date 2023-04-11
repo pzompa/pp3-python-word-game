@@ -234,6 +234,7 @@ This project is a Python terminal game,  created for people to play the classic 
 ## Language:
 - [Python](https://www.python.org/): Python was the main language used  to build the whole application.
 - Markdown: Markdown was used to write the README.md
+- [colorama](https://pypi.org/project/colorama/) was used to colorize the text.
 
 # Environment used
 - [GitHub](https://github.com/pzompa/pp3-python-word-game): GitHub was used for source control
