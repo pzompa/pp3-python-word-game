@@ -229,7 +229,7 @@ This project is a Python terminal game,  created for people to play the classic 
 ## Unfixed Bugs
 - One cosmetic error: "run.py:396:80: E501 line too long (95 > 79 characters)" PEP8 issue still exists.
   - I decided against condensing the line for code readability reasons.
-  - In the future, when the user enters the same wrong letter multiple times, the attempt counter should not increase. I could not fix this because of Codeanywhere IDE migrating problems and due to lack of time. 
+
 # Technologies used
 ## Language:
 - [Python](https://www.python.org/): Python was the main language used  to build the whole application.

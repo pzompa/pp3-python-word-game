@@ -189,12 +189,14 @@ def game_scrn(player_name):
     user_input = ''
     display = ''
     guessed = []
+    wrong_guessed_letter = []
 
     # inital message
     msg = (Fore.BLUE + 'Type only LETTERS a-z')
 
     # for hint
     word_length = len(random_word)
+    hallo = ''
 
     while a_counter < maximum_attempts:
         display = ''
@@ -241,9 +243,13 @@ def game_scrn(player_name):
         # if wrong user input
         elif user_input == '2':
             return ['exit', a_counter, maximum_attempts, random_word]
-        else:
+        elif user_input not in wrong_guessed_letter:
             msg = (Fore.RED + 'Oops, wrong guess, please try again')
+            wrong_guessed_letter.append(user_input)
             a_counter += 1
+        else:
+            msg = (Fore.RED + 'please try another letter')
+
     # attempt maximum reached
     if a_counter == maximum_attempts:
         return ['failed', a_counter, maximum_attempts, random_word]
