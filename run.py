@@ -17,7 +17,7 @@ def random_word_function():
     """
     Chooses a random word from the list
     """
-    words = ["grape",
+    words = ["grapes",
              "orange",
              "mango",
              "kiwi",
